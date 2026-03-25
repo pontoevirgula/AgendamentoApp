@@ -2,6 +2,7 @@ package com.chslcompany.agendamentoapp.domain.usecase
 
 import com.chslcompany.agendamentoapp.domain.model.Agendamento
 import com.chslcompany.agendamentoapp.domain.repository.AgendamentoRepository
+import com.chslcompany.agendamentoapp.util.ApiConstants
 import com.chslcompany.agendamentoapp.util.AppException
 import java.time.LocalDateTime
 
@@ -23,7 +24,7 @@ class AlterarAgendamentoUseCase(
     ): AppException.ValidationException? {
         if (cliente.isBlank())
             return AppException.ValidationException("Nome do cliente é obrigatório")
-        if (dataHora.isBefore(LocalDateTime.now()))
+        if (dataHora.isBefore(LocalDateTime.now(ApiConstants.FUSO_HORARIO)))
             return AppException.ValidationException("Não é possível agendar em data passada")
         return null
     }

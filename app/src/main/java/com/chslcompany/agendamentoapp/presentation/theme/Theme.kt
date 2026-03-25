@@ -1,6 +1,5 @@
-package com.chslcompany.agendamentoapp.ui.theme
+package com.chslcompany.agendamentoapp.presentation.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -9,6 +8,7 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
@@ -31,6 +31,18 @@ private val LightColorScheme = lightColorScheme(
     onBackground = Color(0xFF1C1B1F),
     onSurface = Color(0xFF1C1B1F),
     */
+)
+
+private val ColorScheme = lightColorScheme(
+    primary = Color(0xFF1565C0),
+    onPrimary = Color.White,
+    primaryContainer = Color(0xFFD6E4FF),
+    secondary = Color(0xFF0288D1),
+    background = Color(0xFFF5F7FA),
+    surface = Color.White,
+    onSurface = Color(0xFF1A1A2E),
+    onSurfaceVariant = Color(0xFF5C6B7A),
+    error = Color(0xFFB00020)
 )
 
 @Composable
