@@ -9,10 +9,12 @@ import com.chslcompany.agendamentoapp.presentation.form.AgendamentoFormScreen
 import com.chslcompany.agendamentoapp.presentation.form.AgendamentoFormViewModel
 import com.chslcompany.agendamentoapp.presentation.list.AgendamentoListScreen
 import com.chslcompany.agendamentoapp.presentation.list.AgendamentoListViewModel
+import com.chslcompany.agendamentoapp.presentation.splash.SplashScreen
 import org.koin.androidx.compose.koinViewModel
 
 
 sealed class Screen(val route: String) {
+    data object Splash : Screen("splash")
     data object Lista : Screen("lista")
     data object Form  : Screen("form")
 }
@@ -26,8 +28,18 @@ fun AgendaNavHost(
 
     NavHost(
         navController = navController,
-        startDestination = Screen.Lista.route
+        startDestination = Screen.Splash.route
     ) {
+        composable(Screen.Splash.route) {
+            SplashScreen(
+                onNavigateToLista = {
+                    navController.navigate(Screen.Lista.route) {
+                        popUpTo(Screen.Splash.route) { inclusive = true }
+                    }
+                }
+            )
+        }
+
         composable(Screen.Lista.route) {
             AgendamentoListScreen(
                 viewModel = listViewModel,
