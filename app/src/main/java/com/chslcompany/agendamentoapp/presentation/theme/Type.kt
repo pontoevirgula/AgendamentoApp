@@ -1,4 +1,4 @@
-package com.chslcompany.agendamentoapp.ui.theme
+package com.chslcompany.agendamentoapp.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

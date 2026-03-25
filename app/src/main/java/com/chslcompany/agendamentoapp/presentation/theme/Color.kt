@@ -1,4 +1,4 @@
-package com.chslcompany.agendamentoapp.ui.theme
+package com.chslcompany.agendamentoapp.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 
